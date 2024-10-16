@@ -42,7 +42,7 @@ function mergesort(array)
     {
         for (let leftStart = 0; leftStart < n; leftStart +=- 2 * currSize) 
         {
-            const mod = Math.min(leftStart + currSize - 1, n - 1);
+            const mid = Math.min(leftStart + currSize - 1, n - 1);
             const rightEnd = Math.min(leftStart + 2 * currSize - 1, n - 1);
 
             if (mid < rightEnd) 
