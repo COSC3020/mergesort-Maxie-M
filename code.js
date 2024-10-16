@@ -47,7 +47,7 @@ function mergesort(array)
 
             if (mid < rightEnd) 
             {
-                merge(array, leftStart, mid, rightEnd)
+                merge(array, leftStart, mid, rightEnd);
             }
         }
     }
