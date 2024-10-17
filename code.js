@@ -4,52 +4,55 @@
 
 function mergesort(array) 
 {
-    const n = array.length
+   let len = array.length;
 
-    //The in-place merge function 
-    function merge(arr, left, mid, right)
+   if (len <= 1) 
+   {
+    return array; 
+   }
+
+   for (let size = 1; size < len; size *= 2) 
+   {
+    for (let start = 0; start < len; start += 2 * size) 
     {
-        let i = left; 
-        let j = mid + 1; 
-        
-        //Merging the two subarrays in place 
-        while (i <= mid && j <= right) 
-        {
-            if (arr[i] <= arr[j]) 
-            {
-                i++;
-            }
-            else
-            {
-                const tmp = arr[j];
-                let k = j;
+        let mid = Math.min(start + size - 1, len - 1);
+        let end = Math.min(start + 2 * size - 1, len - 1);
+        mergeInPlace(array, start, mid, end);
+    }
+   }
+   return array;
+}
 
-                while (k > i) 
-                {
-                    arr[k] = arr[k - 1];
-                    k--;
-                }
-                arr[i] = tmp;
-                i++;
-                mid++;
-                j++;
-            }
+function mergeInPlace(array, start, mid, end) 
+{
+    let left = start;
+    let right = mid + 1;
+
+    if (array[mid] <= array[right])
+    {
+        return;
+    }
+
+    while (left <= mid && right <= end) 
+    {
+        if (array[left] <= array[right])
+        {
+            left++;
         }
-    }   
+        else{
+            let value = array[right];
+            let index = right;
     
-    //Iterative MergeSort 
-    for (let currSize = 1; currSize < n; currSize *= 2) 
-    {
-        for (let leftStart = 0; leftStart < n; leftStart +=- 2 * currSize) 
-        {
-            const mid = Math.min(leftStart + currSize - 1, n - 1);
-            const rightEnd = Math.min(leftStart + 2 * currSize - 1, n - 1);
-
-            if (mid < rightEnd) 
+            while (index > left)
             {
-                merge(array, leftStart, mid, rightEnd);
+                array[index] = array[index -1];
+                index--;
             }
+            array[left] = value;
+    
+            left++;
+            mid++;
+            right++;
         }
     }
-    return array;
 }
