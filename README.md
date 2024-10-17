@@ -31,3 +31,12 @@ markdown file.
 **Conclusion:** 
 
 With all all the following information the worst-time complexity of this algorithm is $\Theta(n\log n)$, with a space complexity of $\Theta(1)$. This is due to the in-place merging. 
+
+## Plagiarism Statement
+I certify that I have listed all sources used to complete this exercise, including the use of any Large Language Models. All of the work is my own, except where stated otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is suspected, charges may be filed against me without prior notice.
+
+## Resources
+**Repositories: Used as reference to better understand assignment** 
+- mergesort-rmille70 
+- mergesort-Boomboomyoyo
+- mergesort-ziyuWang6666 
