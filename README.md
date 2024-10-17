@@ -14,3 +14,20 @@ part of the array each recursive call considers.
 Analyse the time complexity of your implementation and give a $\Theta$ bound for
 its worst-case runtime. Add your answer, including your reasoning, to this
 markdown file.
+
+## Runtime Analysis, Maxie M.
+
+**Algorithm Structure:**
+- The outer loop will double the subarray size each iteration, running about $\log_2(n)$ times 
+- The inner loop will merge adjacent subarrays, which will process the entire array in each iteration, will take $O(n)$ time
+  
+**Time Complexity:**
+- Each of the $\log_2(n)$ iterations of the outer loop, the inner loop will process all $n$ elements 
+- The total time complexity will be $O(n\log n)$
+  
+**Space Complexity:** 
+- Due to the merge being done in-place, there will be no additional arrays that shall be created. With this the space complexity is $O(1)$
+  
+**Conclusion:** 
+
+With all all the following information the worst-time complexity of this algorithm is $\Theta(n\log n)$, with a space complexity of $\Theta(1)$. This is due to the in-place merging. 
