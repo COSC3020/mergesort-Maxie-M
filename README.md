@@ -27,6 +27,9 @@ markdown file.
   
 **Space Complexity:** 
 - Due to the merge being done in-place, there will be no additional arrays that shall be created. With this the space complexity is $O(1)$
+
+**Important Note** 
+- The **mergeInplace** function includes element shifting, which may introduce additional work. Especially if elements need to be moved frequently in subarrays. Leading to performance penalty in practical scenarios. 
   
 **Conclusion:** 
 
